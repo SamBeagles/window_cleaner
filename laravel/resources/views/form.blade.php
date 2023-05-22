@@ -36,9 +36,11 @@
                     postcode: $('#postcode').val()
                 };
                 $.ajax({
-                    url: 'http://127.0.0.1:8000/form',
-                    type: 'get',
-                    data: data,
+                    url: '/form',
+                    type: 'post',
+                    data: { data ,
+                    _token: '{!! csrf_token() !!}'
+                    },
                     success: function(){
                         alert('Inserted Successfully')
                     }
@@ -55,7 +57,7 @@
             $town = $_POST["town"];
             $postcode = $_POST["postcode"];
 
-            $query = "INSERT INTO tb_data VALUES('', '$name','$address_line_1','$town','$postcode')";
+            $query = "INSERT INTO tb_data ('id', 'name', 'address_line_1', 'town', 'postcode') VALUES('', '$name','$address_line_1','$town','$postcode')";
             mysqli_query($conn, $query);
         }
         ?>

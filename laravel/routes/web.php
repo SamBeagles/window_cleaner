@@ -21,6 +21,9 @@ Route::get('/form', function () {
     return view('form');
 });
 
+Route::post('/form', function() {
+    return view('form');
+});
 
 Route::get('/account', function () {
     return view('account');
