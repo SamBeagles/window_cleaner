@@ -1,0 +1,17 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+.bubble{
+  font: 100% $font-stack;
+  color: $primary-color;
+}
